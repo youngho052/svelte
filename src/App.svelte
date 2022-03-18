@@ -1,35 +1,34 @@
 <script lang="ts">
-  import router from "page";
-  import routes from "./routes";
-  import { Router, Route, useNavigate, Link } from "svelte-navigator";
-  import { API } from "./api/api";
+  import router from 'page';
+  import { Router, Route, useNavigate, Link } from 'svelte-navigator';
+  import { API } from './api/api';
 
-  import List from "./routes/List.svelte";
-  import Detail from "./routes/Detail.svelte";
+  import List from './pages/List.svelte';
+  import Detail from './pages/Detail.svelte';
 
-  import axios from "axios";
-  import { createEventDispatcher } from "svelte";
-  import { writable } from "svelte/store";
+  import axios from 'axios';
+  import { createEventDispatcher } from 'svelte';
+  import { writable } from 'svelte/store';
   // import List from "./pages/List.svelte";
 
   let page: typeof List;
   let params: string;
 
-  routes.forEach((item) => {
-    router(
-      item.path,
-      (ctx, next) => {
-        params = ctx.params;
-        next();
-      },
+  // routes.forEach((item) => {
+  //   router(
+  //     item.path,
+  //     (ctx, next) => {
+  //       params = ctx.params;
+  //       next();
+  //     },
 
-      () => {
-        page = item.component;
-      }
-    );
-  });
+  //     () => {
+  //       page = item.component;
+  //     }
+  //   );
+  // });
 
-  router.start();
+  // router.start();
 
   let user: { login: boolean } = { login: false };
 
@@ -48,18 +47,6 @@
   const clickmessage = (event: { detail: { text: string } }) => {
     alert(event.detail.text);
   };
-
-  export let name: string;
-  let test: { id: number; name: string }[] = [
-    {
-      id: 1,
-      name: "hi",
-    },
-    {
-      id: 2,
-      name: "hello",
-    },
-  ];
 </script>
 
 <Router url="">
@@ -102,7 +89,7 @@
     justify-content: center;
 
     padding: 20px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
   nav {

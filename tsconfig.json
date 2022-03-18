@@ -11,3 +11,22 @@
     "esModuleInterop": true
   }
 }
+// {
+//   "include": ["src/**/*"],
+//   "exclude": ["node_modules/*"],
+//   "compilerOptions": {
+//     "target": "es2017",
+//     "types": ["svelte", "node"],
+//     "allowJs": true,
+//     "skipLibCheck": true,
+//     "esModuleInterop": true,
+//     "allowSyntheticDefaultImports": true,
+//     "strict": true,
+//     "module": "esnext",
+//     "moduleResolution": "node",
+//     "resolveJsonModule": true,
+//     "noEmit": true,
+//     "lib": ["dom.iterable", "es5", "es6", "esnext", "dom"],
+//     "downlevelIteration": true
+//   }
+// }
